@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'g-qr',
+    loadChildren: () => import('./g-qr/g-qr.module').then( m => m.GQRPageModule)
+  },
 ];
 
 @NgModule({

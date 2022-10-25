@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
+ 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +9,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+
+  Scan: {};
+
+  constructor(private barcodeScanner: BarcodeScanner) {
+
+    }
+    ScanCode() {
+      this.barcodeScanner.scan().then(barcodeData => {
+          this.Scan = barcodeData;
+        })
+        .catch(err => {
+          console.log("Error", err);
+        });
+    }
+
 
 }
