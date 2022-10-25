@@ -1,0 +1,7 @@
+{
+  "name": "codigo_Qr",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
